@@ -1,0 +1,247 @@
+
+@font-face {
+  font-family: 'TTTravels-Regular';
+  src: local('TTTravels-Regular'),
+  url('../fonts/TTTravels-Regular.woff2') format('woff2'),
+  url('../fonts/TTTravels-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'TTTravels-DemiBold';
+    src: local('TTTravels-DemiBold'),
+    url('../fonts/TTTravels-DemiBold.woff2') format('woff2'),
+    url('../fonts/TTTravels-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    body {
+      font-family: 'TTTravels-Regular', sans-serif;
+    }
+
+
+
+
+.grid {
+  max-width: 1981px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 30px;
+  background-color: #FFFFFF;
+  grid-auto-flow: dense;
+}
+
+
+.grid-hero {
+  grid-template-columns: repeat(auto-fill, minmax(378px, 1fr));
+  grid-template-rows: repeat(3, minmax(480px, 1fr));
+}
+
+
+.grid-item {
+  background-color:  #FFFFFF;
+  min-height: 100px;
+  color: black;
+  font-size: 2rem;
+  grid-column: 1 / span 0;
+  grid-row: 1 / span ;
+  border-radius: 10px;
+  box-shadow: 5px 8px 5px 5px grey;
+  padding: 20px;
+  position: relative;
+}
+
+h2 {
+  font-family: 'TTTravels-DemiBold', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.59px;
+}
+
+h3 {
+  font-family: 'TTTravels-DemiBold', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28.79px;
+}
+
+.cources-descr {
+  font-family: 'TTTravels-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+
+
+.cources-logo {
+  max-width: 95px;
+  max-height: 95px;
+}
+
+.cources-location {
+  font-family: 'TTTravels-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  background-image: url(../img/locate.png);
+  background-position: left center;
+  background-size: 11px 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+}
+
+.cources-url {
+  font-family: 'TTTravels-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.8px;
+  background-image: url(../img/href.png);
+  background-position: left center;
+  background-size: 11px 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+}
+
+.cources-choice {
+  font-family: 'TTTravels-DemiBold', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.59px;
+  /* display: flex;
+  justify-content: space-around; */
+  position: absolute;
+  right: 100px;
+  bottom: 30px;
+  justify-content: center;
+}
+
+.cources-btn {
+  width: 165px;
+  height: 39px;
+  background-color: #6B46D4;
+  color:  #FFFFFF;
+  border: 0px;
+  cursor: pointer;
+  margin-right: 20px;
+   /* display: flex;
+  justify-content: space-around; */
+}
+
+.cources-more {
+  margin-top: 5px;
+  color: #6B46D4;
+}
+
+
+.grid-footer {
+  max-width: 1981px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 0px;
+  background-color: #262529;;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-template-rows: repeat(1, minmax(100px, 1fr));
+}
+
+
+.grid__item-footer {
+  background-color: #262529;
+  min-height: 100px;
+  color: #FFFFFF;
+  font-size: 2rem;
+  grid-column: 1 / span 0;
+  grid-row: 1 / span 0;
+  padding: 20px;
+}
+
+.contacts {
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  align-content: space-around;
+  font-size: 18px;
+  line-height: 21.59px;
+}
+
+.cources-descr {
+  z-index: 1000;
+}
+
+.contacts p{
+  margin: 0;
+  padding: 0
+}
+
+.contacts li{
+  margin-bottom: 10px;
+}
+
+.descr-bold {
+  font-family: 'TTTravels-DemiBold', sans-serif;
+}
+
+footer {
+  padding-top: 20px;
+}
+
+.footer-pic {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.current-year {
+  font-family: 'TTTravels-DemiBold', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 43.19px;
+  margin-left: 25px;
+  margin-right: 30px;
+  color: #FFFFFF;
+}
+
+.months {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: -300px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 10px;
+  border-top: solid #FFFFFF;
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 21.59px;
+  justify-content: space-between;
+}
+
+.month {
+  margin-right: 10px;
+}
+
+.current-month {
+  position: relative;
+  margin-right: 10px;
+}
+
+.current {
+  position: absolute;
+  top: -22px;
+}
+
+.footer-time {
+  display: flex;
+  align-content: space-around;
+}

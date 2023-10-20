@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>ontico</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+  </head>
+
+  <body>
+
+    <header>
+    </header>
+    
+    <section class="grid grid-hero">
+    </section>
+
+    <script>
+
+    async function populate() {
+
+      const requestURL = 'https://conf.ontico.ru/api/conferences/forCalendar.json';
+      const request = new Request(requestURL);
+
+      const response = await fetch(request);
+      const superHeroes = await response.json();
+
+      populateHeader(superHeroes);
+      populateHeroes(superHeroes);
+
+    }
+
+    function populateHeader(obj) {
+      const header = document.querySelector('header');
+      const myH1 = document.createElement('h1');
+      myH1.textContent = obj.squadName;
+      header.appendChild(myH1);
+
+      const myPara = document.createElement('p');
+      myPara.textContent = ``;
+      header.appendChild(myPara);
+    }
+
+    function populateHeroes(obj) {
+      const section = document.querySelector('section');
+      const heroes = obj.result;
+      const image = document.querySelector(".svg")
+
+      for (const hero of heroes) {
+        const myArticle = document.createElement('article');
+        myArticle.className = 'grid-item';
+        const myH2 = document.createElement('h2');
+        const myPara1 = document.createElement('img');
+        myPara1.className='cources-logo';
+        const myPara2 = document.createElement('h3');
+        const myPara3 = document.createElement('p');
+        myPara3.className='cources-descr';
+        const myPara4 = document.createElement('p');
+        myPara4.className='cources-location';
+        const myPara5 = document.createElement('a');
+        myPara5.className='cources-url';
+
+        const myList1 = document.createElement('div');
+        myList1.className='cources-choice';
+        const myList = document.createElement('ul');
+
+
+        const myPara6 = document.createElement('button');
+        myPara6.className='cources-btn';
+        const myPara7 = document.createElement('a');
+        myPara7.className='cources-more';
+
+
+
+
+        myH2.textContent = hero.date_range;
+        
+        myPara1.src = `https:${hero.logo}`;
+        myPara2.textContent = `${hero.name}`;
+        myPara3.textContent = `${hero.brief}`;
+        myPara4.textContent = `${hero.location}`;
+        myPara5.textContent = `${hero.uri}`;
+        myPara5.href = hero.uri;
+
+        myPara6.textContent = `Купить билет`;
+        myPara7.textContent = `Подробнее`;
+        myPara7.href = ``;
+
+        myList1.appendChild(myPara6);
+        myList1.appendChild(myPara7);
+
+        
+        const superPowers = hero.buy;
+        const sale = []
+        for (let key in superPowers) {
+        sale.push(superPowers[key])
+          }
+
+        // for (const power of sale) {
+        //   const listItem = document.createElement('li');
+        //   listItem.textContent = power;
+        //   myList.appendChild(listItem);
+        // }
+
+
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myPara4);
+        myArticle.appendChild(myPara5);
+      
+        myArticle.appendChild(myList1);
+        myArticle.appendChild(myList);
+        
+        section.appendChild(myArticle);
+      }
+    }
+
+    populate();
+
+    </script>
+<footer class="footer">
+  <div class="grid-footer">
+      <div class="grid__item-footer">
+        <ul class="contacts">
+          <li class="contacts-descr">
+          <p class="descr-bold">По&nbsp;любым вопросам обращайтесь:</p>
+          <p>Бухгалтерия и&nbsp;вопросы оплаты: support@ontico.ru +7(495) 646-07-68, @ontico_support</p>
+          </li>
+          <li class="contacts-descr">
+          <span class="descr-bold">Программный комитет: </span><span>speakers@ontico.ru</span>
+          </li>
+          <li class="contacts-descr">
+          <span class="descr-bold">Организационный комитет: </span><span>organization@ontico.ru</span>
+          </li>
+          <li class="contacts-descr">
+            125040, Москва, Нижняя&nbsp;ул., д.&nbsp;14, стр.&nbsp;7, подъезд&nbsp;1, оф.&nbsp;16
+            ООО &laquo;Конференции Олега Бунина&raquo;
+          </li>
+        </ul>
+    </div>
+    <div class="grid__item-footer"><img class="footer-pic" src="img/ontico.png" alt="онтико 2022"></div>
+    
+
+    <div class="grid__item-footer">
+    <span class="current-year">2022&nbsp;год:</span>
+    
+  </div>
+  <div class="grid__item-footer">
+    <ul class="months">
+      <li class="month">январь</li>
+      <li class="month">февраль</li>
+      <li class="month">март</li>
+      <li class="month">апрель</li>
+      <li class="current-month">май<div class="current"><img src="img/current.png" alt=""></div></li>
+      <li class="month">июнь</li>
+      <li class="month">июль</li>
+      <li class="month">август</li>
+      <li class="month">сентябрь</li>
+      <li class="month">октябрь</li>
+      <li class="month">ноябрь</li>
+      <li class="month">декабрь</li>
+    </ul>
+  </div>
+  </div>
+      
+    
+
+
+
+</footer>
+  </body>
+</html>
